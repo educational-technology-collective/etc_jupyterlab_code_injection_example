@@ -62,11 +62,22 @@ const plugin: JupyterFrontEndPlugin<void> = {
             metadata?: JSONObject | undefined
           ): Promise<IExecuteReplyMsg | undefined> => {
 
-            code = `print('hello')\n${code}`;
+            let promise;
 
-            let promise = executeFn(code, output, sessionContext, metadata);
+            try {
 
-            OutputArea.execute = executeFn;
+              code = `print('hello')\n${code}`;
+
+              promise = executeFn(code, output, sessionContext, metadata);
+            }
+            catch (e) {
+
+              throw e;
+            }
+            finally {
+
+              OutputArea.execute = executeFn;
+            }
 
             return promise;
           }
