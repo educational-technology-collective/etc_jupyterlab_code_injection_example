@@ -1,0 +1,8 @@
+{
+  "jupyter.lab.shortcuts": [],
+  "title": "@educational-technology-collective/etc_jupyterlab_code_injection_example",
+  "description": "@educational-technology-collective/etc_jupyterlab_code_injection_example settings.",
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false
+}
