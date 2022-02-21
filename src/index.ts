@@ -56,13 +56,13 @@ const plugin: JupyterFrontEndPlugin<void> = {
         if (args.cell.model.metadata.get('inject') == true) {
 
           OutputArea.execute = (
-            code: string, 
-            output: OutputArea, 
-            sessionContext: ISessionContext, 
+            code: string,
+            output: OutputArea,
+            sessionContext: ISessionContext,
             metadata?: JSONObject | undefined
-            ): Promise<IExecuteReplyMsg | undefined> => {
+          ): Promise<IExecuteReplyMsg | undefined> => {
 
-              code = `print('hello')\n${code}`;
+            code = `print('hello')\n${code}`;
 
             let promise = executeFn(code, output, sessionContext, metadata);
 
@@ -73,7 +73,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
         }
       }
     });
-    
+
     // if (settingRegistry) {
     //   settingRegistry
     //     .load(plugin.id)
