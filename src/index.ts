@@ -49,7 +49,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
 
     let executeFn = OutputArea.execute;
 
-    NotebookActions.executionScheduled.connect(async (sender: any, args: { notebook: Notebook, cell: Cell<ICellModel> }) => {
+    NotebookActions.executionScheduled.connect((sender: any, args: { notebook: Notebook, cell: Cell<ICellModel> }) => {
 
       if (args.cell.model.metadata.has('inject')) {
 
